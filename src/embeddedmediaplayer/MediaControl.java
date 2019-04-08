@@ -325,20 +325,33 @@ public class MediaControl extends VBox {
         });
         
         //changes the case of the selected
+        /*
+        *  Method to make the title of the selected clip upper case 
+        */
         final Button btnAllCapsSelected= new Button("UPPER");
         btnAllCapsSelected.setTooltip(new Tooltip("Make Selected Item Upper Case"));
         btnAllCapsSelected.setStyle("-fx-max-width:infinity");
         btnAllCapsSelected.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
+               Clip clip= table.getSelectionModel().getSelectedItem();// getting the selected Item from table
+               clip.setTitle(clip.getTitle().toUpperCase()); //set the Tittle with UPPER CASE
+               doTableRefresh(table); // update the table
             }
         });
         
         //moves the selected item bac
+        //changes the case of the selected
+        /*
+        *  Method to make the start of the selected clip go back one second
+        */
         final Button btnNudgeSelectedStartBack = new Button("<<");
         btnNudgeSelectedStartBack.setTooltip(new Tooltip("Nudge Selected Back"));
         btnNudgeSelectedStartBack.setStyle("-fx-max-width:infinity");
         btnNudgeSelectedStartBack.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
+                Clip clip= table.getSelectionModel().getSelectedItem();// getting the selected Item from table
+                clip.setStart(clip.getStart()-1); // set the start 1 second back
+                doTableRefresh(table);// update the table
             }
         });
         final Button btnNudgeSelectedStartForward = new Button(">>");
@@ -504,7 +517,8 @@ public class MediaControl extends VBox {
           //gridBox.add(btnNudgeBack,6,1,1,1);
           //gridBox.add(btnNudgeForward,6,1,1,1);
           //gridBox.add(btnAllCaps,8,1,1,1);
-          //gridBox.add(btnNudgeSelectedStartBack,8,1,1,1);
+            gridBox.add(btnAllCapsSelected,7,1,1,1);// create button shown to UpperCase a selected item
+            gridBox.add(btnNudgeSelectedStartBack,8,1,1,1);// show the button to start of the selected clip go back one second
           //gridBox.add(btnNudgeSelectedStartForward,8,1,1,1);
           
           
