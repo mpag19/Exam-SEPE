@@ -129,11 +129,18 @@ public class ClipTest {
     @Test
     public void testSetEndToNegativeNumberKeepsPreviousValue() 
     {
+      //Setting end with negative value
+      Clip instance1 = new Clip("title",4,10);
+      int endValueBeforeModify1= instance1.getEnd(); // getting the End value before set the new value
+      instance1.setEnd(-10);   // setting end with negative value
+      int endValueAfterModify1=instance1.getEnd(); //getting the current value after being modified, it should be the same at endValueBeforeModify1
+      assertEquals(endValueBeforeModify1,endValueAfterModify1); 
     }
     
     @Test
     public void testSetStartToValidPositiveNumber() 
-    {    
+    {   
+        
     }
     
     
