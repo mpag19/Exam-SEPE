@@ -64,14 +64,36 @@ public class ClipTest {
         String previousValue2=instance2.getTitle();// getting the value before setting the new value
         instance2.setTitle("New Title");
         String valueAfter2=instance2.getTitle();// getting the real value, after the modification.
-        assertNotEquals(previousValue2,valueAfter2);
-        
+        assertNotEquals(previousValue2,valueAfter2);       
         
     }
 
     @Test
     public void testSetEndBeforeStartKeepsPreviousValue()
     {
+        
+      // Setting End before Start
+      Clip instance = new Clip("title",4,10);
+      int endValueBeforeModify= instance.getEnd(); // getting the End value before set the new value
+      instance.setEnd(2);
+      int endValueAfterModify=instance.getEnd(); //getting the current value after being modified
+      assertEquals(endValueBeforeModify,endValueAfterModify);  
+      
+      //Setting end with null
+      Clip instance1 = new Clip("title",4,10);
+      int endValueBeforeModify1= instance1.getEnd(); // getting the End value before set the new value
+      instance1.setEnd(null);// setting end with null
+      int endValueAfterModify1=instance1.getEnd(); //getting the current value after being modified
+      assertEquals(endValueBeforeModify1,endValueAfterModify1); 
+      
+          
+      //Setting end  equals start time
+      Clip instance2 = new Clip("title",4,10);
+      int endValueBeforeModify2= instance2.getEnd(); // getting the End value before set the new value
+      instance2.setEnd(4);// setting end equals start
+      int endValueAfterModify2=instance2.getEnd(); //getting the current value after being modified
+      assertNotEquals(endValueBeforeModify2,endValueAfterModify2);
+      assertEquals(4,endValueAfterModify2);
     }
 
     @Test
