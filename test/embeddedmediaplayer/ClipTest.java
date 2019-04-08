@@ -119,6 +119,11 @@ public class ClipTest {
     @Test
     public void testEqualsOnNonEqualClips() 
     {
+        // Different Clips
+        Clip instance= new Clip("title",1,10);
+        Clip instanceAnotherClip1 = new Clip("title2",1,11);// create another instance with different values
+        boolean resultDifferent= instance.equals(instanceAnotherClip1);
+        assertFalse(resultDifferent);
     }
     
     @Test
