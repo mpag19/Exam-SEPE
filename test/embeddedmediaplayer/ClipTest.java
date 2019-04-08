@@ -44,7 +44,7 @@ public class ClipTest {
     public void testSetTitleToEmptyStringKeepsPreviousValue()
     {
          //set String ""
-        System.out.println("setTitle ");
+        
         Clip instance = new Clip("title",3,8);
         String previousValue=instance.getTitle();// getting the value before setting
         instance.setTitle("");
@@ -52,7 +52,7 @@ public class ClipTest {
         assertEquals(previousValue,valueAfter);
         
         //set string NULL
-        System.out.println("setTitle Null ");
+        
         Clip instance1 = new Clip("title",3,8);
         String previousValue1=instance1.getTitle();// getting the value before setting the Null value
         instance1.setTitle(null);
@@ -106,12 +106,12 @@ public class ClipTest {
         assertTrue(resultEqual);
         
         // Different Clips
-        Clip instanceAnotherClip1 = new Clip("title2",1,11);
+        Clip instanceAnotherClip1 = new Clip("title2",1,11);// create different  clip
         boolean resultDifferent= instance.equals(instanceAnotherClip1);
         assertFalse(resultDifferent);
         
         //null clip
-         Clip instanceAnotherClip2=null;
+         Clip instanceAnotherClip2=null;// null clip
          boolean resultNull=instance.equals(instanceAnotherClip2);
          assertFalse(resultNull);        
     }
@@ -140,6 +140,28 @@ public class ClipTest {
     @Test
     public void testSetStartToValidPositiveNumber() 
     {   
+         //setting righ value possitive 
+        Clip instance = new Clip("title",15,50);
+        instance.setStart(20);
+        int startValueAfterModify3=instance.getStart();// gettin value after modyfied the start attribut with null
+        assertEquals(20,startValueAfterModify3); 
+        
+        // Setting null
+        int startValueBeforeModify=instance.getStart();// gettin the value before any modification
+        instance.setStart(null);
+        int startValueAfterModify=instance.getStart();// gettin value after modyfied the start attribut with null
+        assertEquals(startValueBeforeModify,startValueAfterModify);
+        
+        //setting < 0
+        instance.setStart(-1);
+        int startValueAfterModify1=instance.getStart();// gettin value after modyfied the start attribut with null
+        assertEquals(startValueBeforeModify,startValueAfterModify1);
+        
+        //setting start greater than end
+        instance.setStart(51);
+        int startValueAfterModify2=instance.getStart();// gettin value after modyfied the start attribut with null
+        assertEquals(startValueBeforeModify,startValueAfterModify2);
+        
         
     }
     
