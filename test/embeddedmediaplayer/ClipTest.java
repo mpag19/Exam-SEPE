@@ -43,6 +43,30 @@ public class ClipTest {
     @Test
     public void testSetTitleToEmptyStringKeepsPreviousValue()
     {
+         //set String ""
+        System.out.println("setTitle ");
+        Clip instance = new Clip("title",3,8);
+        String previousValue=instance.getTitle();// getting the value before setting
+        instance.setTitle("");
+        String valueAfter=instance.getTitle();// getting the real value, after the modification.
+        assertEquals(previousValue,valueAfter);
+        
+        //set string NULL
+        System.out.println("setTitle Null ");
+        Clip instance1 = new Clip("title",3,8);
+        String previousValue1=instance1.getTitle();// getting the value before setting the Null value
+        instance1.setTitle(null);
+        String valueAfter1=instance1.getTitle();// getting the real value, after the modification.
+        assertEquals(previousValue1,valueAfter1);
+        
+        //set title with String
+        Clip instance2 = new Clip("title",3,8);
+        String previousValue2=instance2.getTitle();// getting the value before setting the new value
+        instance2.setTitle("New Title");
+        String valueAfter2=instance2.getTitle();// getting the real value, after the modification.
+        assertNotEquals(previousValue2,valueAfter2);
+        
+        
     }
 
     @Test
