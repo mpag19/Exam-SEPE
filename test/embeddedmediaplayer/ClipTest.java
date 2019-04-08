@@ -99,6 +99,21 @@ public class ClipTest {
     @Test
     public void testEqualsOnEqualClips() 
     {
+        //Same Clips
+        Clip instance= new Clip("title",1,10);
+        Clip instanceAnotherClip = new Clip("title",1,10);// create other clip with same Data
+        boolean resultEqual= instance.equals(instanceAnotherClip);
+        assertTrue(resultEqual);
+        
+        // Different Clips
+        Clip instanceAnotherClip1 = new Clip("title2",1,11);
+        boolean resultDifferent= instance.equals(instanceAnotherClip1);
+        assertFalse(resultDifferent);
+        
+        //null clip
+         Clip instanceAnotherClip2=null;
+         boolean resultNull=instance.equals(instanceAnotherClip2);
+         assertFalse(resultNull);        
     }
     
     @Test
