@@ -1,0 +1,86 @@
+body{
+	background: url('images/bedroom-door-entrance-271639.jpg')
+	no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: Kanit;
+}
+
+body background{
+	opacity: 75%;
+}
+
+.form{
+	/*border: 5px black solid;*/
+	text-align: center;
+	position: absolute;
+	padding: 50px;
+	border-radius: 10px;
+	width: 300px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: white;
+
+}
+
+.form input[type="text"], .form input[type="password"]{
+	border: none;
+	margin:20px auto;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 24px;
+	height: 30px;
+	width: 300px;
+	outline: none;
+	padding: 14px 10px;
+	transition: 0.25s;
+}
+
+.form input[type="submit"]{
+	border: none;
+	margin:20px auto;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 24px;
+	height: 30px;
+	width: 300px;
+	outline: none;
+	padding: 30px 40px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.form input[type="submit"]:hover{
+	background: #2ecc71;
+}
+
+.form input[type="email"]{
+	border: none;
+	margin:20px auto;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 24px;
+	height: 30px;
+	width: 300px;
+	outline: none;
+	padding: 14px 10px;
+	transition: 0.25s;
+}
+
+.select{
+	border: none;
+	margin:20px auto;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 24px;
+	height: 30px;
+	width: 300px;
+	outline: none;
+	padding: 14px 10px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+

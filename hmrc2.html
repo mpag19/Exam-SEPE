@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HMRC</title>
+	<style type="text/css">
+		ul li{
+			list-style-type: none;
+			float: left;
+			margin: 20px;
+		}
+
+		/*img{
+			width: 180px;
+			height: 90px;
+		}*/
+
+		.image{
+			/*background-repeat: no-repeat;*/
+			width: 180px;
+			height: 100%;
+			background-size: cover;
+
+		}
+
+		body{
+			margin: 0px;
+			padding:0px;
+			
+		}
+
+		.contentbox{
+			
+		}
+	</style>
+
+	<script type="text/javascript">
+		var fade_in_from=0;
+		var fade_out_from=10;
+		function fadeIn(element){
+
+			var target = document.getElementById(element);
+			target.style.display="block";
+			var newSetting = fade_in_from/10;
+			target.style.opacity = newSetting;
+			fade_in_from++;
+			if(fade_in_from==10){
+				target.style.opacity=1;
+				clearTimeout(loopTimer);
+				fade_in_from= 0;
+				return false;
+			}
+
+			var loopTimer = setTimeout('fadeIn(\''+element+'\')',50);
+		}
+
+
+			function fadeOut(element){
+
+			var target = document.getElementById(element);
+			var newSetting = fade_out_from/10;
+			target.style.opacity = newSetting;
+			fade_out_from--;
+			if(fade_out_from== 0){
+				target.style.opacity= 0.2;
+				target.style.display = "inherit";
+				clearTimeout(loopTimer);
+				fade_out_from= 10;
+				return false;
+			}
+
+			var loopTimer = setTimeout('fadeOut(\''+element+'\')',50);
+		}
+
+
+
+
+		var idArray =["images/export1.jpg", "images/fil_1.jpg", 'images/UKimport.jpg' ];
+
+
+		function focusNext(e){
+			try{
+				for (var i=0;i<idArray,length; i++){
+					if(e.keyCode===13 && e.target.id === idArray[i]){
+						document.querySelector('#${idArray[i+1]}').focus();
+					}
+				}
+			}catch(error) {}
+		}
+	</script>
+</head>
+<body>
+
+	<div class="image">
+	<img src="images/HeadSection.jpg">
+	</div>
+
+	<ul>
+		
+			<div id="div1" class="contentbox" onkeydown="focusNext(event)">
+		<li>
+			<img src="images/export1.jpg" style="width: 180px; height:90px;">
+			<h2>EXPORT</h2>
+		</li>
+		</div>
+		
+		
+			<div id="div2" class="contentbox" onkeydown="focusNext(event)">
+		<li>
+			<img src="images/fil_1.jpg" style="width: 180px; height:90px;">
+			<h2>CARRIER</h2>
+		</li>
+		</div>
+		
+		
+			<div id="div3" class="contentbox" onkeydown="focusNext(event)">
+		<li>
+			<img src="images/UKimport.jpg" style="width: 180px; height:90px;">
+			<h2>LOCAL CUSTOMS</h2>
+		</li>
+		</div>
+		
+		
+			<div id="div4" class="contentbox" onkeydown="focusNext(event)">
+		<li>
+			<img src="images/DHL.jpg" style="width: 180px; height:90px;">
+			<h2>SHIPPER</h2>
+		</li>
+		</div>
+		
+
+		
+			<div class="checkbox" id="div5">
+		<li>
+			<img src="images/HMRC_logo.jpg" style="width: 180px; height:90px;">
+			<h2>HMRC</h2>
+		</li>
+		</div>
+		
+
+		
+			<div class="checkbox" id="div6">
+		<li>
+			<img src="images/Hands.jpg" style="width: 180px; height:90px;">
+			<h2>IMPORTER</h2>
+		</li>
+		</div>
+	</ul>
+
+</body>
+</html>

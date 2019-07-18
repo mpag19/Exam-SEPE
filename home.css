@@ -1,0 +1,70 @@
+body{
+  background: url("images/namaste.jpeg")
+   no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
+
+.container {
+  width:900px; 
+  height: 150px;
+  margin-top: 250px;
+  text-align: center;
+}
+
+
+.first-box {
+  width:300px; 
+  float:left; 
+   background: url('images/sunset.jpg')
+  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+  height: 450px;
+  margin: 50px;
+  opacity: 50%;
+  box-shadow: 200px;
+}
+
+.first-box p {
+  color: #ffffff;
+ /* padding-left: 80px;
+  padding-top: 50px;*/
+  text-align: center;
+  margin-top: 250px;
+  font-size: 50px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.second-box {
+  width:300px; 
+  height: 450px; 
+  float:right; 
+  background: blue;
+  margin: 50px;
+  opacity: 20%;
+  background: url("images/sunrise.png")
+  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
+.second-box p {
+  color: #ffffff;
+ /* padding-left: 80px;
+  padding-top: 50px;*/
+  text-align: center;
+  margin-top: 250px;
+  font-size: 50px;
+  font-family: sans-serif;
+
+}
+
